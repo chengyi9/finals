@@ -35,7 +35,7 @@ my.server <- function(input, output) {
     data <- sample_n(data, num)
   })
   output$table <- renderDataTable({
-    DT::datatable((select(filter_data(), c("movie_title", "plot_keywords", "duration", "imdb_score"))), 
+    datatable((select(filter_data(), c("movie_title", "plot_keywords", "duration", "imdb_score"))), 
                   options = list(paging = FALSE), rownames = FALSE)
   })
   output$plot <- renderPlot({

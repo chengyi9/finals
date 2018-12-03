@@ -31,7 +31,13 @@ my.ui <- fluidPage(
     dataTableOutput('table'),
     br(),
     plotOutput('plot1'),
-    plotOutput('plot2')
+    br(),
+    plotOutput('plot2'),
+    br(),
+    br(),
+    textOutput("graph_info"),
+    br(),
+    br()
   )
 )
 

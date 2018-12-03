@@ -34,6 +34,7 @@ my.ui <- fluidPage(
     br(),
     plotOutput('plot2'),
     br(),
+    plotOutput('plot3'),
     br(),
     textOutput("graph_info"),
     br(),

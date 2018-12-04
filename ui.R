@@ -3,6 +3,8 @@ library(dplyr)
 library(shiny)
 library(tidyverse)
 library(shinycssloaders)
+library(plotly)
+library(DT)
 
 my.ui <- fluidPage(
   titlePanel("Movie Filter"),

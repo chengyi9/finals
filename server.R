@@ -33,7 +33,7 @@ my.server <- function(input, output) {
     r_year <- input$year
     r_rating <- input$c_rating
     data <- m_data %>% filter(title_year == r_year) %>% filter(imdb_score <= high_rating) %>% filter (imdb_score >= low_rating) %>% 
-      filter(str_detect(genres, input$genre)) %>% filter(content_rating == r_rating)
+      filter(str_detect(genres, input$genre)) %>% filter(content_rating == r_rating) %>% filter(country == r_country)
     num <- nrow(data)
     if (num > 10) {
       num <- 10
@@ -41,8 +41,7 @@ my.server <- function(input, output) {
     data <- sample_n(data, num)
   })
   output$table <- renderDataTable({
-    DT::datatable((select(filter_data(), c("movie_title", "plot_keywords", "duration", "imdb_score"))), 
-                  options = list(paging = FALSE), rownames = FALSE)
+    DT::datatable((select(filter_data(), c("movie_title", "plot_keywords", "duration", "imdb_score"))), options = list(paging = FALSE), rownames = FALSE)
   })
   output$plot1 <- renderPlot({
     plot_data <- filter(filter_data())

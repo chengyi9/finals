@@ -5,10 +5,11 @@ library(tidyverse)
 library(shinycssloaders)
 library(plotly)
 library(DT)
+library(shinythemes)
 
 my.ui <- fluidPage(
+  includeCSS("myStyle.css"),
   titlePanel("Movie Filter"),
-  
   sidebarPanel(
     selectInput("genre", "Movie's Genre:", choices = c("Select" = "", "Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", 
                                                          "Drama", "Family", "Fantasy", "Foreign", "History", "Horror", "Mystery", "Musical","Romance", 

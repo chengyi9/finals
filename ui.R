@@ -9,7 +9,8 @@ library(shinythemes)
 
 my.ui <- fluidPage(
   includeCSS("myStyle.css"),
-  titlePanel("Movie Filter"),
+  h1(id="big-heading", "The Movie Filter"),
+  tags$style(HTML("#big-heading{color: red; font-size: 350%;}")),
   sidebarPanel(
     selectInput("genre", "Movie's Genre:", choices = c("Select" = "", "Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", 
                                                          "Drama", "Family", "Fantasy", "Foreign", "History", "Horror", "Mystery", "Musical","Romance", 
